@@ -1,5 +1,4 @@
-#use case 5:- Ensure the player gets to exact winning position 100.
- 
+#use case 6:-Report the number of times the dice was played to win the game and also the position after every die role
 import random
 
 def get_option():
@@ -36,7 +35,7 @@ def play_turn(player_name, position, rolls_count):
         print(f"{player_name} reached position 100 and WON the game in {rolls_count} rolls!")
         return position, rolls_count, True  # Player wins
     
-    return position, rolls_count, False  # No winner yet
+    return position, rolls_count, False  # the number  of counts returning
 
 
 def start_game():
@@ -45,8 +44,7 @@ def start_game():
     win_flag = False
 
     while not win_flag:
-        player_position, rolls_count, win_flag = play_turn("Player", player_position, rolls_count)
+        player_position, rolls_count, win_flag = play_turn("Player", player_position, rolls_count) # the number  of counts returning
         print(f"Player Roll #{rolls_count}: Position = {player_position}")
-
 
 start_game()
