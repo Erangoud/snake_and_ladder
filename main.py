@@ -1,4 +1,4 @@
-#use case 4:- Repeat till the Player reaches the winning position 100. 
+#use case 5:- Ensure the player gets to exact winning position 100.
  
 import random
 
@@ -32,7 +32,7 @@ def play_turn(player_name, position, rolls_count):
             position -= dice_roll
             print(f"{player_name} moved backward by {dice_roll}.")
 
-    if position == 100:
+    if position == 100: # use case 5
         print(f"{player_name} reached position 100 and WON the game in {rolls_count} rolls!")
         return position, rolls_count, True  # Player wins
     
