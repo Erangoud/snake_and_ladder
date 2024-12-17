@@ -1,5 +1,5 @@
-#use case 3:- The Player then checks for a Option. They are No Play, Ladder or Snake.
-
+#use case 4:- Repeat till the Player reaches the winning position 100. 
+ 
 import random
 
 def get_option():
@@ -32,5 +32,21 @@ def play_turn(player_name, position, rolls_count):
             position -= dice_roll
             print(f"{player_name} moved backward by {dice_roll}.")
 
+    if position == 100:
+        print(f"{player_name} reached position 100 and WON the game in {rolls_count} rolls!")
+        return position, rolls_count, True  # Player wins
     
+    return position, rolls_count, False  # No winner yet
 
+
+def start_game():
+    player_position = 0
+    rolls_count = 0
+    win_flag = False
+
+    while not win_flag:
+        player_position, rolls_count, win_flag = play_turn("Player", player_position, rolls_count)
+        print(f"Player Roll #{rolls_count}: Position = {player_position}")
+
+
+start_game()
